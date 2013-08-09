@@ -322,6 +322,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  color: #555;
+  font-family: 'Merriweather','Alegreya','Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px; }
+
 a {
   color: #f05a28; }
 
@@ -331,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 28px 0 20px 0; }
 
 h1 {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 40px; }
 
 h2 {
@@ -437,24 +443,27 @@ section {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
-  color: #555;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 24px; }
-
 section.intro {
-  background: #eeeeee; }
+  background: #555; }
 
-section.song:after {
-  content: "";
-  display: table;
-  clear: both; }
+section.intro h1, section.intro p {
+  color: #eee; }
+
+section.song {
+  background: #eee; }
+  section.song:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 section.song .song-info {
   float: left;
-  width: 380px; }
+  width: 400px; }
+  section.song .song-info p {
+    font-style: italic; }
 section.song .song-lyrics {
   float: right;
-  width: 640px;
-  white-space: pre; }
+  width: 600px;
+  white-space: pre;
+  background: #fff;
+  padding: 4px 24px; }
