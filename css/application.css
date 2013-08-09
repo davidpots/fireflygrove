@@ -414,18 +414,18 @@ td {
 
 /* A section is a horiztonal band/stripe/row on the page. 
    Defaults to the <body> bg color but can have its own color. */
-.section {
+section {
   padding: 20px; }
 
 /* If the page is at least 768px, center the content at that width. 
    Otherwise it will be 100% wide. */
-@media (min-width: 768px) {
-  .content {
-    width: 768px;
+@media (min-width: 1080px) {
+  .wrapper {
+    width: 1080px;
     margin: 0 auto; } }
 /* If you want full width content no matter what, 
    add class '.content-full' to any 'div.content' */
-.content-full {
+.wrapper-full {
   margin: 0;
   width: 100%; }
 
@@ -442,3 +442,19 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 24px; }
+
+section.intro {
+  background: #eeeeee; }
+
+section.song:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+section.song .song-info {
+  float: left;
+  width: 380px; }
+section.song .song-lyrics {
+  float: right;
+  width: 640px;
+  white-space: pre; }

@@ -16,3 +16,13 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 16px;
       line-height: 24px; }
+
+// --
+
+    section.intro { background: #eeeeee; }
+    
+    section.song  { @include clearfix; }
+    section.song  {
+      .song-info    { float: left;  width: 380px; }
+      .song-lyrics  { float: right; width: 640px; white-space: pre; }
+    }
