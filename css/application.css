@@ -476,6 +476,12 @@ article.song .song-info {
   margin: 20px 0; }
 article.song .song-info p {
   font-style: italic; }
+article.song .song-info .play-btn {
+  display: block;
+  background: green;
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px 8px; }
 article.song .song-lyrics {
   white-space: pre;
   background: #fff;

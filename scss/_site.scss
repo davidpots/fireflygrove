@@ -33,6 +33,7 @@
       .song-info    { background: yellow; padding: 20px; margin: 20px 0; }
       .song-info h1 { }
       .song-info p  { font-style: italic; }
+      .song-info .play-btn { display: block; background: green; color: white; text-decoration: none; padding: 10px 10px 8px; }
 
       .song-lyrics        { white-space: pre; background: #fff; padding: 4px 24px; margin: 20px 0; }
     }
