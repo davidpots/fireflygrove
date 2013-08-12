@@ -458,24 +458,25 @@ section.intro p {
   margin: 0; }
 
 article.song {
-  position: relative; }
+  position: relative;
+  margin: 0 0 80px 0; }
 
-article.song .secondary {
+article.song .song-info {
   top: 0px;
   left: 20px;
   width: 400px; }
-article.song .primary {
+article.song .song-lyrics {
   top: 0px;
   left: 440px;
   width: 600px; }
 
-article.song .secondary {
+article.song .song-info {
   background: yellow;
   padding: 20px;
   margin: 20px 0; }
-  article.song .secondary p {
-    font-style: italic; }
-article.song .primary {
+article.song .song-info p {
+  font-style: italic; }
+article.song .song-lyrics {
   white-space: pre;
   background: #fff;
   padding: 4px 24px;

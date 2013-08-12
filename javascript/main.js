@@ -1,78 +1,85 @@
 $(document).ready(function(){
-  // Loop through each <article> and add the height as inline CSS
+
+  // First,
+  //
+  // Loop through each song <article> and add required height as inline CSS
   $('article').each(function(){ 
-
-    var primaryHeight = $(this).find('.primary').outerHeight() + 'px';
-    $(this).css('height', primaryHeight);
-    $(this).find('.primary').css('height', primaryHeight);
-
-    var secondaryHeight = $(this).find('.secondary').outerHeight() + 'px';
-    $(this).find('.secondary').css('height', secondaryHeight);
-
-    var bottomMargin = "80px";
-    $(this).css('margin-bottom', bottomMargin);
+    // read height of the song-lyrics, write to inline CSS
+    var songLyricsHeight = $(this).find('.song-lyrics').outerHeight() + 'px';
+    $(this).css('height', songLyricsHeight);
+    $(this).find('.song-lyrics').css('height', songLyricsHeight);
+    // get height of song-info, write to inline CSS
+    var songInfoHeight = $(this).find('.song-info').outerHeight() + 'px';
+    $(this).find('.song-info').css('height', songInfoHeight);
   });
-  // Prime each <article> .primary by adding absolute positioning
-  $('article .primary').each(function(){ 
+
+  // Second,
+  //
+  // Prime each <article> .song-lyrics by adding absolute positioning
+  $('article .song-lyrics').each(function(){ 
     $(this).css('position', 'absolute');
   });
-  // Prime each <article> .secondary by adding absolute positioning
-  $('article .secondary').each(function(){ 
+  // Prime each <article> .song-info by adding absolute positioning
+  $('article .song-info').each(function(){ 
     $(this).css('position', 'absolute');
   });
 });
 
-// Prime the loop that checks the position of each article
-var $articles = $('article'), i, len = $articles.length;
+// Third,
+//
+// Run a loop that checks position of each song's elements on scroll
 
-// On scroll, check the position of each article
-$(window).scroll(function(){
-  for(i = 0; i < len; i++) {
-    // Set the article that is being examined for this loop
-    var $article = $($articles[i]);
+    // Prime the loop that checks the position of each article
+    var $articles = $('article'), i, len = $articles.length;
 
-    // These control the position of the fixed secondary column
-    function secondaryFixTop() {
-      $article.find('.secondary').css('position','fixed').css('left','20px').css('top', '0px');
-    }
-    function secondaryUnFix() {
-      $article.find('.secondary').css('position','absolute').css('left','20px').css('top','0px').css('bottom','auto');
-    }
-    function secondaryFixBottom() {
-      $article.find('.secondary').css('position','absolute').css('left','20px').css('top','auto').css('bottom','-40px');
-    }
+    // On scroll, check the position of each article
+    $(window).scroll(function(){
+      for(i = 0; i < len; i++) {
+        // Set the article that is being examined for this loop
+        var $article = $($articles[i]);
 
-    // Calculate the distance of an element from the top of the browser window
-    var scrollTop     = $(window).scrollTop(),
-        elementOffset = $article.offset().top,
-        distance      = (elementOffset - scrollTop);
-    // Calculate the height of desired element (so you can determine its bottom)
-    var itemHeight     = $article.outerHeight();
-    // Calculate the distance of bottom of element to top of window
-    var bottomDistance = (distance + itemHeight);
+        // These control the position of the fixed song-info column
+        function songInfoFixTop() {
+          $article.find('.song-info').css('position','fixed').css('left','20px').css('top', '0px');
+        }
+        function songInfoUnFix() {
+          $article.find('.song-info').css('position','absolute').css('left','20px').css('top','0px').css('bottom','auto');
+        }
+        function songInfoFixBottom() {
+          $article.find('.song-info').css('position','absolute').css('left','20px').css('top','auto').css('bottom','-40px');
+        }
 
-    // If the element is below the window, remove class "fixed"
-    if (distance > 0) {
-      $article.removeClass('fixed');
-      secondaryUnFix();
-    } else {
-      // If the element is below the top of the window, add class "fixed"
-      if (distance < 0) {
-        $article.addClass('fixed');
-        secondaryFixTop();
+        // Calculate the distance of an element from the top of the browser window
+        var scrollTop     = $(window).scrollTop(),
+            elementOffset = $article.offset().top,
+            distance      = (elementOffset - scrollTop);
+        // Calculate the height of desired element (so you can determine its bottom)
+        var itemHeight     = $article.outerHeight();
+        // Calculate the distance of bottom of element to top of window
+        var bottomDistance = (distance + itemHeight);
+
+        // If the element is below the window, remove class "fixed"
+        if (distance > 0) {
+          $article.removeClass('fixed');
+          songInfoUnFix();
+        } else {
+          // If the element is below the top of the window, add class "fixed"
+          if (distance < 0) {
+            $article.addClass('fixed');
+            songInfoFixTop();
+          }
+          // This is when the song-info column should become bottom-ized
+          if (bottomDistance > $article.find('.song-info').outerHeight()) {
+            songInfoFixTop();
+          } else if (bottomDistance < $article.find('.song-info').outerHeight()) {
+            $article.addClass('bottomized');
+            songInfoFixBottom();
+          }
+          // If the element is WAY below the top of the window, remove class "fixed"
+          if (bottomDistance < 0) {
+            $article.removeClass('fixed');    
+            songInfoUnFix();
+          }
+        }
       }
-      // This is when the secondary column should become bottom-ized
-      if (bottomDistance > $article.find('.secondary').outerHeight()) {
-        secondaryFixTop();
-      } else if (bottomDistance < $article.find('.secondary').outerHeight()) {
-        $article.addClass('bottomized');
-        secondaryFixBottom();
-      }
-      // If the element is WAY below the top of the window, remove class "fixed"
-      if (bottomDistance < 0) {
-        $article.removeClass('fixed');    
-        secondaryUnFix();
-      }
-    }
-  }
-});
+    });
