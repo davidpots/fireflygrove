@@ -13,16 +13,24 @@
 
 // --
 
+    body { background: #ddd; }
+
     section.intro { background: #555; }
-    section.intro {
-      h1,p          { color: #eee; }
+    section.intro h1 { color: #eee; margin: 0 0 5px 0; }
+    section.intro p  { color: #eee; margin: 0; }
+    
+    article.song { position: relative; }
+
+    article.song {
+      .secondary      { top: 0px; left: 20px;   width: 400px; }
+      .primary        { top: 0px; left: 440px; width: 600px; }
     }
     
-    section.song  { @include clearfix; background: #eee; }
-    section.song  {
-      .song-info    { float: left;  width: 400px; 
-        h1            { }
-        p             { font-style: italic; }
+    
+    article.song { 
+      .secondary  { background: yellow; padding: 20px; margin: 20px 0;
+        h1  { }
+        p   { font-style: italic; }
       }
-      .song-lyrics  { float: right; width: 600px; white-space: pre; background: #fff; padding: 4px 24px; }
+      .primary        { white-space: pre; background: #fff; padding: 4px 24px; margin: 20px 0; }
     }

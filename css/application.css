@@ -334,7 +334,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #444;
-  margin: 28px 0 20px 0; }
+  margin: 0 0 20px 0; }
 
 h1 {
   font-size: 32px;
@@ -443,27 +443,40 @@ section {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+body {
+  background: #ddd; }
+
 section.intro {
   background: #555; }
 
-section.intro h1, section.intro p {
-  color: #eee; }
+section.intro h1 {
+  color: #eee;
+  margin: 0 0 5px 0; }
 
-section.song {
-  background: #eee; }
-  section.song:after {
-    content: "";
-    display: table;
-    clear: both; }
+section.intro p {
+  color: #eee;
+  margin: 0; }
 
-section.song .song-info {
-  float: left;
+article.song {
+  position: relative; }
+
+article.song .secondary {
+  top: 0px;
+  left: 20px;
   width: 400px; }
-  section.song .song-info p {
+article.song .primary {
+  top: 0px;
+  left: 440px;
+  width: 600px; }
+
+article.song .secondary {
+  background: yellow;
+  padding: 20px;
+  margin: 20px 0; }
+  article.song .secondary p {
     font-style: italic; }
-section.song .song-lyrics {
-  float: right;
-  width: 600px;
+article.song .primary {
   white-space: pre;
   background: #fff;
-  padding: 4px 24px; }
+  padding: 4px 24px;
+  margin: 20px 0; }
