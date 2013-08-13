@@ -10,7 +10,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/application.css">
-    <link rel="stylesheet" href="css/sc/sc-player-standard.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/sc/sc-player-standard.css" type="text/css"> -->
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700,400italic,700italic,300italic,300' rel='stylesheet' type='text/css'>
 
@@ -20,9 +20,13 @@
     <section class="intro">
       <div class="wrapper wrapper-full">
 
-        <h1>Firefly Grove</h1>
-        <p>The occasional folk songs by one Mr. David Potsiadlo</p>
-        <a href="https://soundcloud.com/davidpots/sets/firefly-grove" class="sc-player">My new dub track</a>
+        <div class="header-text">
+          <h1>Firefly Grove</h1>
+          <p>The occasional folk songs by one Mr. David Potsiadlo</p>
+        </div> <!-- end: .header-text -->
+        <div class="sc-player-wrap">
+          <a href="https://soundcloud.com/davidpots/sets/firefly-grove" class="sc-player"></a>
+        </div> <!-- end: .sc-player-wrap -->
 
       </div> <!-- end: .wrapper -->
     </section> <!-- end: intro -->
@@ -565,6 +569,7 @@ Tune in for yourself, and you'll hear what I mean
     <script src="javascript/soundcloudSetup.js"></script>
     <script src="javascript/soundcloud.player.api.js"></script>
     <script src="javascript/sc-player.js"></script>
+    <script src="javascript/main.js"></script>
 
   </body>
 </html>

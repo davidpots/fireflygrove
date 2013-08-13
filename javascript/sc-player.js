@@ -647,7 +647,7 @@
     $track.addClass('active').siblings('li').removeClass('active');
     $('.artworks li', $player).each(function(index) {
       $(this).toggleClass('active', index === trackId);
-    });
+    });    
     return false;
   });
 
