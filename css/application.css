@@ -425,9 +425,9 @@ section {
 
 /* If the page is at least 768px, center the content at that width. 
    Otherwise it will be 100% wide. */
-@media (min-width: 1080px) {
+@media (min-width: 1020px) {
   .wrapper {
-    width: 1080px;
+    width: 1020px;
     margin: 0 auto; } }
 /* If you want full width content no matter what, 
    add class '.content-full' to any 'div.content' */
@@ -452,17 +452,17 @@ article.song {
 
 article.song .song-info {
   top: 0px;
-  left: 20px;
+  left: 0px;
   width: 400px; }
 article.song .song-lyrics {
   top: 0px;
-  left: 440px;
+  left: 420px;
   width: 600px; }
 
 article.song .song-info {
   background: yellow;
   padding: 20px;
-  margin: 20px 0; }
+  margin: 110px 0 20px 0; }
 article.song .song-info p {
   font-style: italic; }
 article.song .song-info .play-btn {
@@ -475,7 +475,7 @@ article.song .song-lyrics {
   white-space: pre;
   background: #fff;
   padding: 4px 24px;
-  margin: 20px 0; }
+  margin: 110px 0 20px 0; }
 
 .sc-artwork-list {
   display: none; }
@@ -502,12 +502,12 @@ article.song .song-lyrics {
   display: none; }
 
 section.intro {
-  background: #252525; }
-
-section.intro .wrapper:after {
-  content: "";
-  display: table;
-  clear: both; }
+  background: #252525;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  height: 90px; }
 
 section.intro h1 {
   color: #eee;
@@ -521,15 +521,11 @@ section.intro p {
   font-size: 14px;
   line-height: 16px; }
 
-.header-text {
-  float: left;
-  width: 400px; }
-
 .sc-player {
   position: absolute;
   height: 50px;
-  left: 420px;
-  right: 100px; }
+  left: 0;
+  right: 0px; }
 
 .sc-player .sc-controls .sc-play {
   position: absolute;
@@ -557,8 +553,10 @@ section.intro p {
   display: block; }
 
 .sc-player .sc-scrubber {
+  position: absolute;
   height: 50px;
-  left: 60px; }
+  left: 60px;
+  right: 0; }
 
 .sc-player .sc-scrubber .currentTrack {
   position: absolute;
@@ -567,19 +565,19 @@ section.intro p {
   z-index: 1;
   font-size: 16px; }
 
-.sc-player .sc-time-indicators {
+.sc-player .sc-scrubber .sc-time-span {
+  background: #444;
+  height: 50px; }
+
+.sc-player .sc-scrubber .sc-time-span .sc-played {
+  background: #666;
+  height: 50px; }
+
+.sc-player .sc-scrubber .sc-time-indicators {
   position: absolute;
   right: 15px;
   top: 15px;
   color: #fff; }
 
-.sc-player .sc-time-indicators span {
+.sc-player .sc-scrubber .sc-time-indicators span {
   color: #fff; }
-
-.sc-time-span {
-  background: #444;
-  height: 50px; }
-
-.sc-time-span .sc-played {
-  background: #666;
-  height: 50px; }

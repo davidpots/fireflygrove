@@ -20,8 +20,8 @@
 
           /* If the page is at least 768px, center the content at that width. 
              Otherwise it will be 100% wide. */
-          @media (min-width: 1080px) { 
-            .wrapper { width: 1080px; margin: 0 auto; } 
+          @media (min-width: 1020px) { 
+            .wrapper { width: 1020px; margin: 0 auto; } 
           }
 
           /* If you want full width content no matter what, 

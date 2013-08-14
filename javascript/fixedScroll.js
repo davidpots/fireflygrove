@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+  // Calculate widths
+  var infoWidth = $('article.song:first').find('.song-info').outerWidth();
+  var lyricWidth = $('article.song:first').find('.song-lyrics').outerWidth();
+  var songWidth = infoWidth + lyricWidth + 20; // 20px to account for gap between the two tiles
+  var windowWidthHalved = ($(window).width()-songWidth)/2 + 'px';
+
   // First,
   //
   // Loop through each song <article> and add required height as inline CSS
@@ -11,6 +17,9 @@ $(document).ready(function(){
     // get height of song-info, write to inline CSS
     var songInfoHeight = $(this).find('.song-info').outerHeight() + 'px';
     $(this).find('.song-info').css('height', songInfoHeight);
+
+    // The v1 magic to make the song centered
+    $(this).css('margin-left',windowWidthHalved);
   });
 
   // Second,
@@ -23,7 +32,9 @@ $(document).ready(function(){
   $('article .song-info').each(function(){ 
     $(this).css('position', 'absolute');
   });
+
 });
+
 
 // Third,
 //
@@ -40,13 +51,13 @@ $(document).ready(function(){
 
         // These control the position of the fixed song-info column
         function songInfoFixTop() {
-          $article.find('.song-info').css('position','fixed').css('left','20px').css('top', '0px');
+          $article.find('.song-info').css('position','fixed').css('left','auto').css('top', '0px');
         }
         function songInfoUnFix() {
-          $article.find('.song-info').css('position','absolute').css('left','20px').css('top','0px').css('bottom','auto');
+          $article.find('.song-info').css('position','absolute').css('left','0px').css('top','0px').css('bottom','auto');
         }
         function songInfoFixBottom() {
-          $article.find('.song-info').css('position','absolute').css('left','20px').css('top','auto').css('bottom','-40px');
+          $article.find('.song-info').css('position','absolute').css('left','0px').css('top','auto').css('bottom','-130px');
         }
 
         // Calculate the distance of an element from the top of the browser window
@@ -83,3 +94,18 @@ $(document).ready(function(){
         }
       }
     });
+
+
+// If window is resized, recalculate + apply margin-left to each song
+$(window).resize(function(){
+  // Calculate widths
+  var infoWidth = $('article.song:first').find('.song-info').outerWidth();
+  var lyricWidth = $('article.song:first').find('.song-lyrics').outerWidth();
+  var songWidth = infoWidth + lyricWidth + 20; // 20px to account for gap between the two tiles
+  var windowWidthHalved = ($(window).width()-songWidth)/2 + 'px';
+
+  $('article').each(function(){ 
+    $(this).css('margin-left',windowWidthHalved);
+  });
+
+});

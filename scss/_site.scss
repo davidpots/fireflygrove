@@ -18,18 +18,18 @@
     // Song layout magic
     article.song { position: relative; margin: 0 0 80px 0; }
     article.song {
-      .song-info      { top: 0px; left: 20px;   width: 400px; }
-      .song-lyrics        { top: 0px; left: 440px; width: 600px; }
+      .song-info      { top: 0px; left: 0px;   width: 400px; }
+      .song-lyrics        { top: 0px; left: 420px; width: 600px; }
     }
     
     // Song visual styles
     article.song { 
-      .song-info    { background: yellow; padding: 20px; margin: 20px 0; }
+      .song-info    { background: yellow; padding: 20px; margin: 110px 0 20px 0; }
       .song-info h1 { }
       .song-info p  { font-style: italic; }
       .song-info .play-btn { display: block; background: green; color: white; text-decoration: none; padding: 10px 10px 8px; }
 
-      .song-lyrics        { white-space: pre; background: #fff; padding: 4px 24px; margin: 20px 0; }
+      .song-lyrics        { white-space: pre; background: #fff; padding: 4px 24px; margin: 110px 0 20px 0; }
     }
 
 // --
@@ -43,23 +43,26 @@
 .sc-time-span .sc-waveform-container      { display: none; }
 .sc-time-span .sc-buffer                  { display: none; }
 
-section.intro                     { background: #252525; }
-section.intro .wrapper            { @include clearfix; }
+section.intro                     { background: #252525; position: fixed; left: 0; right: 0; z-index: 4; height: 90px; }
+section.intro .wrapper            { }
 section.intro h1 { color: #eee; margin: 0 0 5px 0; font-size: 24px; line-height: 30px; }
 section.intro p  { color: #eee; margin: 0; font-size: 14px; line-height: 16px; }
-.header-text                      { float: left; width: 400px; }
 
+.header-text                      { }
 .sc-player-wrap                   { }
-.sc-player                        { position: absolute; height: 50px; left: 420px; right: 100px; }
+
+.sc-player                        { position: absolute; height: 50px; left: 0; right: 0px; }
 .sc-player .sc-controls           { }
 .sc-player .sc-controls .sc-play  { position: absolute; top: 0; left: 0; display: block; height: 50px; width: 60px; background: yellow; }
 .sc-player .sc-controls .sc-pause { position: absolute; top: 0; left: 0; display: block; height: 50px; width: 60px; background: yellow; display: none; }
-.sc-player.playing .sc-controls .sc-play  { display: none; }
-.sc-player.playing .sc-controls .sc-pause { display: block; }
 
-.sc-player .sc-scrubber           { height: 50px; left: 60px; }
-.sc-player .sc-scrubber .currentTrack { position: absolute; left: 11px; top: 10px; z-index: 1; font-size: 16px; }
-.sc-player .sc-time-indicators    { position: absolute; right: 15px; top: 15px; color: #fff; }
-.sc-player .sc-time-indicators span { color: #fff; }
-.sc-time-span                             { background: #444; height: 50px; }
-.sc-time-span .sc-played                  { background: #666; height: 50px; }
+    .sc-player.playing .sc-controls .sc-play  { display: none; }
+    .sc-player.playing .sc-controls .sc-pause { display: block; }
+
+.sc-player .sc-scrubber                             { position: absolute; height: 50px; left: 60px; right: 0; }
+.sc-player .sc-scrubber .currentTrack               { position: absolute; left: 11px; top: 10px; z-index: 1; font-size: 16px; }
+
+.sc-player .sc-scrubber .sc-time-span               { background: #444; height: 50px; }
+.sc-player .sc-scrubber .sc-time-span .sc-played    { background: #666; height: 50px; }
+.sc-player .sc-scrubber .sc-time-indicators         { position: absolute; right: 15px; top: 15px; color: #fff; }
+.sc-player .sc-scrubber .sc-time-indicators span    { color: #fff; }
