@@ -604,9 +604,9 @@
       $('a.sc-player, div.sc-player').scPlayer();
     },
     autoPlay: false,
-    continuePlayback: true,
+    continuePlayback: false,
     randomize: false,
-    loadArtworks: 5,
+    loadArtworks: 0,
     // the default Api key should be replaced by your own one
     // get it here http://soundcloud.com/you/apps/new
     apiKey: 'htuiRd1JP11Ww0X72T1C3g'
@@ -623,6 +623,34 @@
     $list.find('li.active').click();
     return false;
   });
+
+
+
+
+      // when a user first hits PLAY, remove the 'not-playing' class from <body>
+      $(document).on('click','.not-playing a.sc-play, .not-playing a.play-btn', function(event) {
+        $('body').removeClass('not-playing');
+        var track_id = $('.sc-trackslist li.active').data("song-id");
+        $('.play-btn[data-song-id='+track_id+']').removeClass('passive').addClass('playing');
+        return false;
+      });
+
+      // in top player, add class 'paused' if user clicks pause (via top player)
+      $(document).on('click','.sc-player.playing a.sc-pause', function(event) {
+        $('.sc-player').addClass('paused');
+        var track_id = $('.sc-trackslist li.active').data("song-id");
+        $('.play-btn[data-song-id='+track_id+']').removeClass('playing').addClass('paused');
+        return false;
+      });
+
+      // in top player, remove class 'paused' if user resumes play (via top player)
+      $(document).on('click','.sc-player.paused a.sc-play', function(event) {
+        $('.sc-player').removeClass('paused');
+        var track_id = $('.sc-trackslist li.active').data("song-id");
+        $('.play-btn[data-song-id='+track_id+']').removeClass('paused').addClass('playing');
+        return false;
+      });
+
 
   // displaying the info panel in the player
   $(document).on('click','a.sc-info-toggle, a.sc-info-close', function(event) {
