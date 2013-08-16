@@ -21,14 +21,22 @@ $(window).scroll(function(){
 
 // Animate in the first song (to hide the jiggle of the content centering itself)
 $(document).ready(function(){ 
-  $('.songs-wrapper article:first').css('visibility','hidden');
-    setTimeout(function(){ 
-        $(".songs-wrapper article:first").css({
-          'opacity':'0',
-          'margin-top': '30px',
-          'visibility': 'visible'
-        }).animate({
-          'opacity': 1.0,
-          'margin-top': 0
-        }, 720), 1000});
+  $(".songs-wrapper article").css("margin-top","30px");
+  setTimeout(function(){ 
+    $(".songs-wrapper article").animate({
+      opacity:'1',
+      marginTop: '0px'
+    });
+  }, 280);
 });
+
+      // // $('.songs-wrapper article:first').css('visibility','hidden');
+  // setTimeout(function(){ 
+  //     $(".songs-wrapper article").css({
+  //       opacity:0,
+  //       margin-top: '30px'
+  //     }).animate({
+  //       opacity: 1.0,
+  //       margin-top: 0,
+  //       visibility: 'visible'
+  //     }, 720), 1000});

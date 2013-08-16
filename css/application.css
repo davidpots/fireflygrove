@@ -506,6 +506,9 @@ article.song .song-lyrics {
   left: 420px;
   width: 600px; }
 
+.songs-wrapper article {
+  opacity: 0; }
+
 article.song .song-info {
   padding: 20px 20px 18px;
   margin: 20px 0 0 0; }
