@@ -491,7 +491,7 @@ section.intro p {
 
 .songs-wrapper {
   background: #fff;
-  padding-top: 20px; }
+  padding: 20px 0 100px 0; }
 
 article.song {
   position: relative;

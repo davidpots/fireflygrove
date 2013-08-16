@@ -8,6 +8,9 @@ Look for the finished version coming sometime this August.
 
 ### To do:
 
+- CNAME stuff + DNS stuff
+- Google analytics
+- fix the top player "played" line being momentarily full width when playing your first song
 - Add animations for the play / pause buttons when pushed (like microbeats.cc)
 - if you play the first song before scrolling, show the top player
 - Tweak the default non-playing state of the top player (add text, remove timeline, etc)
@@ -22,3 +25,5 @@ Look for the finished version coming sometime this August.
 - Write a blog post about why I built the site
 - fit text for the hero h1 (and paragraph?)
 - think about a top-player design that retains branding, has external links (if they exist), and a much smaller player
+- better organize the CSS
+- better organize the jQuery
