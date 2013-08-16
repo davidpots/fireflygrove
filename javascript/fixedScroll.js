@@ -51,13 +51,13 @@ $(document).ready(function(){
 
         // These control the position of the fixed song-info column
         function songInfoFixTop() {
-          $article.find('.song-info').css('position','fixed').css('left','auto').css('top', '0px');
+          $article.find('.song-info').css('position','fixed').css('left','auto').css('top', '55px');
         }
         function songInfoUnFix() {
           $article.find('.song-info').css('position','absolute').css('left','0px').css('top','0px').css('bottom','auto');
         }
         function songInfoFixBottom() {
-          $article.find('.song-info').css('position','absolute').css('left','0px').css('top','auto').css('bottom','-130px');
+          $article.find('.song-info').css('position','absolute').css('left','0px').css('top','auto').css('bottom','-20px');
         }
 
         // Calculate the distance of an element from the top of the browser window
@@ -70,24 +70,24 @@ $(document).ready(function(){
         var bottomDistance = (distance + itemHeight);
 
         // If the element is below the window, remove class "fixed"
-        if (distance > 0) {
+        if (distance > 55) {
           $article.removeClass('fixed');
           songInfoUnFix();
         } else {
           // If the element is below the top of the window, add class "fixed"
-          if (distance < 0) {
+          if (distance < 55) {
             $article.addClass('fixed');
             songInfoFixTop();
           }
           // This is when the song-info column should become bottom-ized
-          if (bottomDistance > $article.find('.song-info').outerHeight()) {
+          if (bottomDistance > ($article.find('.song-info').outerHeight())+55) {
             songInfoFixTop();
-          } else if (bottomDistance < $article.find('.song-info').outerHeight()) {
+          } else if (bottomDistance < ($article.find('.song-info').outerHeight())+55) {
             $article.addClass('bottomized');
             songInfoFixBottom();
           }
           // If the element is WAY below the top of the window, remove class "fixed"
-          if (bottomDistance < 0) {
+          if (bottomDistance < 55) {
             $article.removeClass('fixed');    
             songInfoUnFix();
           }
