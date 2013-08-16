@@ -1,0 +1,12 @@
+@-webkit-keyframes pop-in {
+  0%   { -webkit-transform: scale(.8); }
+  80%  { -webkit-transform: scale(1.1); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.anim-pop-in {
+  -webkit-animation: pop-in .1s linear;
+  -moz-animation: pop-in .1s linear;
+  -o-animation: pop-in .1s linear;
+  animation: pop-in .1s linear;
+}

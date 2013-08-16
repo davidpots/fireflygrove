@@ -10,6 +10,8 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/animations.css">
+
     <!-- <link rel="stylesheet" href="css/sc/sc-player-standard.css" type="text/css"> -->
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700,400italic,700italic,300italic,300' rel='stylesheet' type='text/css'>
@@ -45,7 +47,10 @@
             <p>Back in early 2008, one of my favorite blogs would occasionally publish lyrics for song ideas -- some the author recorded as songs, some not. One day while over caffeinated at a coffee shop and having trouble with Photoshop, I saw new lyrics had been posted on this blog for a song named "Hotel Hell".</p>
             <p>Too caffeinated to focus on that day's web design project, I decided to go home and record a spin-off version of the song (which is the kind of thing the author would have loved, I knew). The first verse and chorus were taken from the original lyrics, with the 2nd and 3rd verses being original from me. Within an hour I wrote + recorded the song on my pocket digital recorder.</p>
             <p>It had begun.</p>
-            <a href="#" class="play-btn passive" data-song-id="103957591">Listen</a>
+            <div class="play-btn-wrap">
+              <a href="#" class="play-btn play passive" data-song-id="103957591">Listen</a>
+              <a href="#" class="play-btn pause" data-song-id="103957591">Listen</a>
+            </div>
           </div> <!-- end: .song-info -->
         
           <div class="song-lyrics">
@@ -582,9 +587,7 @@ I'm doing just fine oh can't you tell
 
       </article> <!-- end: song -->
     </div> <!-- end: .songs-wrapper -->
-    
-    <p>The end!</p>
-    
+
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//connect.soundcloud.com/sdk.js"></script>

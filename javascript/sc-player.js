@@ -631,7 +631,7 @@
       $(document).on('click','.not-playing a.sc-play, .not-playing a.play-btn', function(event) {
         $('body').removeClass('not-playing');
         var track_id = $('.sc-trackslist li.active').data("song-id");
-        $('.play-btn[data-song-id='+track_id+']').removeClass('passive').addClass('playing');
+        $('.play-btn[data-song-id='+track_id+'].play').removeClass('passive').addClass('playing');
         return false;
       });
 

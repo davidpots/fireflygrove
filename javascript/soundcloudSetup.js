@@ -12,10 +12,11 @@ $(document).on('click','a.sc-play',function(event){
 // SONG-INFO play/pause interaction
 
         // If user clicks play (for inactive song)
-        $(document).on('click','a.play-btn.passive',function(event){
+        $(document).on('click','a.play-btn.play.passive',function(event){
 
           // Tweak the song-info play/pause control on this AND other songs
-          $('a.play-btn').removeClass('playing').removeClass('paused').addClass('passive');
+          $('a.play-btn.playing').removeClass('playing').removeClass('paused').addClass('passive').show();
+          $('a.play-btn.paused').removeClass('paused').hide();
           $(this).removeClass('passive').addClass('playing');
 
           // Get the track ID of song user clicked on, simulate click on that song in top player

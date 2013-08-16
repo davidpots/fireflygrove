@@ -27,16 +27,5 @@ $(document).ready(function(){
       opacity:'1',
       marginTop: '0px'
     });
-  }, 280);
+  }, 250);
 });
-
-      // // $('.songs-wrapper article:first').css('visibility','hidden');
-  // setTimeout(function(){ 
-  //     $(".songs-wrapper article").css({
-  //       opacity:0,
-  //       margin-top: '30px'
-  //     }).animate({
-  //       opacity: 1.0,
-  //       margin-top: 0,
-  //       visibility: 'visible'
-  //     }, 720), 1000});
