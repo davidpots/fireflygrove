@@ -25,7 +25,7 @@
     }
 
     section.intro.hidden { display: none; }
-    section.intro                     { background: #333; position: fixed; top: 0; left: 0; right: 0; z-index: 4; height: 65px; padding: 15px 20px; }
+    section.intro                     { background: #333; position: fixed; top: 0; left: 0; right: 0; z-index: 4; height: 65px; padding: 15px 0px; }
     section.intro .wrapper            {  }
     section.intro h1 { color: #eee; margin: 0 0 5px 0; font-size: 24px; line-height: 30px; }
     section.intro p  { color: #eee; margin: 0; font-size: 14px; line-height: 16px; }
@@ -35,28 +35,28 @@
 
 
     .songs-wrapper { background: #fff; padding: 20px 0 100px 0; }
+
     // Song layout magic
     article.song { position: relative; margin: 0 0 80px 0; }
     article.song {
-      .song-info      { top: 0px; left: 0px;   width: 400px; }
-      .song-lyrics        { top: 0px; left: 420px; width: 600px; }
+      .song-info          { top: 0px; left: 0px;  width: 400px; position: absolute; }
+      .song-lyrics        { top: 0px; left: 420px; width: 520px; position: absolute; }
     }
     
     // Song visual styles
-
-    .songs-wrapper article { opacity: 0; }
+   .songs-wrapper article { opacity: 0; }
     article.song {
-      .song-info    { padding: 20px 20px 18px; margin: 20px 0 0 0; }
+      .song-info    { padding: 0px 20px 18px; margin: 20px 0 0 0; }
       .song-info h1 { }
       .song-info p  { }
-      .song-info .play-btn { display: inline-block; background: $colorPlayer url(../images/btn_play_v1.png) no-repeat 18px 13px; background-size: 16px 20px; height: 0; padding: 45px 25px 0; width: 16px; overflow: hidden; color: white; text-decoration: none; border-radius: 4px; }
-      .song-info .play-btn.passive { background-color: $colorPlayer; }
-      .song-info .play-btn.playing {  background-image: url(../images/btn_pause_v1.png); background-position: 15px 13px; background-size: 20px 20px; }
-      .song-info .play-btn.paused  { }
+      .song-info .play-btn          { display: inline-block; background: $colorPlayer url(../images/btn_play_v1.png) no-repeat 18px 13px; background-size: 16px 20px; height: 0; padding: 45px 25px 0; width: 16px; overflow: hidden; color: white; text-decoration: none; border-radius: 4px; }
+      .song-info .play-btn.passive  { background-color: $colorPlayer; }
+      .song-info .play-btn.playing  {  background-image: url(../images/btn_pause_v1.png); background-position: 15px 13px; background-size: 20px 20px; }
+      .song-info .play-btn.paused   { }
 
-      .song-lyrics        { white-space: pre; background: $colorGrey; padding: 4px 20px; margin: 20px 0 20px 0; border-radius: $brdr; }
+      .song-lyrics                  { white-space: pre; background: $colorGrey; padding: 20px; margin: 20px 0 20px 0; border-radius: $brdr; }
       .song-lyrics strong,
-      .song-info p.sub     { font-size: 12px; color: #bbb; margin: 0 0 8px 0; display: inline-block; margin: 0 0 8px 0; font-weight: bold; }
+      .song-info p.sub              { font-size: 12px; color: #bbb; margin: 0 0 8px 0; display: inline-block; margin: 0 0 8px 0; font-weight: bold; }
     }
 
 // --
@@ -68,9 +68,9 @@
 .sc-volume-slider { display: none; }
 //.sc-waveform-container img  { display: none; }
 //.sc-time-span .sc-waveform-container      { display: none; }
-.sc-time-span .sc-buffer                  { display: none; }
+.sc-time-span .sc-buffer          { display: none; }
 
-.sc-player-wrap                   { margin: 0 0 0 20px; }
+.sc-player-wrap                   { margin: 0 20px; }
 
 .sc-player                        { position: absolute; height: 30px; left: 0; right: 0px; }
 .sc-player .sc-controls           { }

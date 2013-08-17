@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-  // Calculate widths
-  var infoWidth = $('article.song:first').find('.song-info').outerWidth();
-  var lyricWidth = $('article.song:first').find('.song-lyrics').outerWidth();
-  var songWidth = infoWidth + lyricWidth + 20; // 20px to account for gap between the two tiles
-  var windowWidthHalved = ($(window).width()-songWidth)/2 + 'px';
-
   // First,
   //
   // Loop through each song <article> and add required height as inline CSS
@@ -14,24 +8,13 @@ $(document).ready(function(){
     var songLyricsHeight = $(this).find('.song-lyrics').outerHeight() + 'px';
     $(this).css('height', songLyricsHeight);
     $(this).find('.song-lyrics').css('height', songLyricsHeight);
+
     // get height of song-info, write to inline CSS
     var songInfoHeight = $(this).find('.song-info').outerHeight() + 'px';
     $(this).find('.song-info').css('height', songInfoHeight);
 
-    // The v1 magic to make the song centered
-    $(this).css('margin-left',windowWidthHalved);
   });
 
-  // Second,
-  //
-  // Prime each <article> .song-lyrics by adding absolute positioning
-  $('article .song-lyrics').each(function(){ 
-    $(this).css('position', 'absolute');
-  });
-  // Prime each <article> .song-info by adding absolute positioning
-  $('article .song-info').each(function(){ 
-    $(this).css('position', 'absolute');
-  });
 
 });
 
@@ -51,7 +34,7 @@ $(document).ready(function(){
 
         // These control the position of the fixed song-info column
         function songInfoFixTop() {
-          $article.find('.song-info').css('position','fixed').css('left','auto').css('top', '55px');
+          $article.find('.song-info').css('position','fixed').css('left','auto').css('top', '65px');
         }
         function songInfoUnFix() {
           $article.find('.song-info').css('position','absolute').css('left','0px').css('top','0px').css('bottom','auto');
@@ -70,42 +53,27 @@ $(document).ready(function(){
         var bottomDistance = (distance + itemHeight);
 
         // If the element is below the window, remove class "fixed"
-        if (distance > 55) {
+        if (distance > 65) {
           $article.removeClass('fixed');
           songInfoUnFix();
         } else {
           // If the element is below the top of the window, add class "fixed"
-          if (distance < 55) {
+          if (distance < 65) {
             $article.addClass('fixed');
             songInfoFixTop();
           }
           // This is when the song-info column should become bottom-ized
-          if (bottomDistance > ($article.find('.song-info').outerHeight())+55) {
+          if (bottomDistance > ($article.find('.song-info').outerHeight())+65) {
             songInfoFixTop();
-          } else if (bottomDistance < ($article.find('.song-info').outerHeight())+55) {
+          } else if (bottomDistance < ($article.find('.song-info').outerHeight())+65) {
             $article.addClass('bottomized');
             songInfoFixBottom();
           }
           // If the element is WAY below the top of the window, remove class "fixed"
-          if (bottomDistance < 55) {
+          if (bottomDistance < 65) {
             $article.removeClass('fixed');    
             songInfoUnFix();
           }
         }
       }
     });
-
-
-// If window is resized, recalculate + apply margin-left to each song
-$(window).resize(function(){
-  // Calculate widths
-  var infoWidth = $('article.song:first').find('.song-info').outerWidth();
-  var lyricWidth = $('article.song:first').find('.song-lyrics').outerWidth();
-  var songWidth = infoWidth + lyricWidth + 20; // 20px to account for gap between the two tiles
-  var windowWidthHalved = ($(window).width()-songWidth)/2 + 'px';
-
-  $('article').each(function(){ 
-    $(this).css('margin-left',windowWidthHalved);
-  });
-
-});

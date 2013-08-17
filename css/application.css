@@ -425,9 +425,9 @@ section {
 
 /* If the page is at least 768px, center the content at that width. 
    Otherwise it will be 100% wide. */
-@media (min-width: 1020px) {
+@media (min-width: 960px) {
   .wrapper {
-    width: 1020px;
+    width: 960px;
     margin: 0 auto; } }
 /* If you want full width content no matter what, 
    add class '.content-full' to any 'div.content' */
@@ -475,7 +475,7 @@ section.intro {
   right: 0;
   z-index: 4;
   height: 65px;
-  padding: 15px 20px; }
+  padding: 15px 0px; }
 
 section.intro h1 {
   color: #eee;
@@ -500,17 +500,19 @@ article.song {
 article.song .song-info {
   top: 0px;
   left: 0px;
-  width: 400px; }
+  width: 400px;
+  position: absolute; }
 article.song .song-lyrics {
   top: 0px;
   left: 420px;
-  width: 600px; }
+  width: 520px;
+  position: absolute; }
 
 .songs-wrapper article {
   opacity: 0; }
 
 article.song .song-info {
-  padding: 20px 20px 18px;
+  padding: 0px 20px 18px;
   margin: 20px 0 0 0; }
 article.song .song-info .play-btn {
   display: inline-block;
@@ -532,7 +534,7 @@ article.song .song-info .play-btn.playing {
 article.song .song-lyrics {
   white-space: pre;
   background: #f3f4f0;
-  padding: 4px 20px;
+  padding: 20px;
   margin: 20px 0 20px 0;
   border-radius: 4px; }
 article.song .song-lyrics strong,
@@ -563,7 +565,7 @@ article.song .song-info p.sub {
   display: none; }
 
 .sc-player-wrap {
-  margin: 0 0 0 20px; }
+  margin: 0 20px; }
 
 .sc-player {
   position: absolute;

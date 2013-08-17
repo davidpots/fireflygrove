@@ -1,4 +1,3 @@
-
 // Hide/Show the top player on initial scroll
 $(window).scroll(function(){
 
@@ -6,7 +5,6 @@ $(window).scroll(function(){
       elementOffset = $('.songs-wrapper').offset().top,
       distance      = (elementOffset - scrollTop);
 
-  console.log(distance);
   if (distance < 80) {
     $('.intro.hidden').slideToggle(141).removeClass('hidden').addClass('visible');
   }
@@ -29,14 +27,3 @@ $(document).ready(function(){
     });
   }, 280);
 });
-
-      // // $('.songs-wrapper article:first').css('visibility','hidden');
-  // setTimeout(function(){ 
-  //     $(".songs-wrapper article").css({
-  //       opacity:0,
-  //       margin-top: '30px'
-  //     }).animate({
-  //       opacity: 1.0,
-  //       margin-top: 0,
-  //       visibility: 'visible'
-  //     }, 720), 1000});

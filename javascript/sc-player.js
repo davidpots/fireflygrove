@@ -679,48 +679,6 @@
     return false;
   });
 
-// Start pots
-
-  // $('li[data-song-id=103957613] a').click();
-  // $(document).ready(function(){
-  //   $('.unique').click(function(e){
-  //     e.preventDefault();
-  //     var song = $(this).text();
-  //     // Play a hardwired song
-  //       SC.initialize({
-  //         client_id: '4a01792d7496116664999da099ce9b6f'
-  //       });
-  //       SC.get('/tracks/' + song, {limit: 1},
-  //         function(tracks) {
-  //           SC.oEmbed(tracks.permalink_url, {auto_play: true}, document.getElementById("target"));
-  //         });
-  //   });
-  // });
-
-
-
-  // 
-  // $(document).on('click','.sc-trackslist li.playlist-item', function(event) {
-  //   var $trackIdFull = $(this).data("song-id"),
-  //       $track = $(this),
-  //       $player = $track.closest('.sc-player'),
-  //       trackId = $track.data('sc-track').id,
-  //       play = $player.is(':not(.playing)') || $track.is(':not(.active)');
-  //       alert("the trackID is "+trackId);
-  //   if (play) {
-  //     onPlay($player, trackId);
-  //   }else{
-  //     onPause($player);
-  //   }
-  //   $track.addClass('active').siblings('li').removeClass('active');
-  //   $('.artworks li', $player).each(function(index) {
-  //     $(this).toggleClass('active', index === trackId);
-  //   });
-  //   return false;
-  // });
-
-// end pots
-
   var scrub = function(node, xPos) {
     var $scrubber = $(node).closest('.sc-time-span'),
         $buffer = $scrubber.find('.sc-buffer'),
